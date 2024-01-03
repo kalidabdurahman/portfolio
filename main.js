@@ -47,6 +47,29 @@ window.addEventListener("scroll", () => {
   })
 })
 
+// JavaScript to update active class on navigation circles based on scroll position
+window.addEventListener('scroll', () => {
+  const navCircles = document.querySelectorAll('.nav-circle');
+  const sections = document.querySelectorAll('section');
+
+  let currentSection = '';
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  navCircles.forEach(circle => {
+    circle.classList.remove('active');
+    if (circle.getAttribute('href').includes(currentSection)) {
+      circle.classList.add('active');
+    }
+  });
+});
+
+
 
 // JavaScript to update active class on navigation circles based on scroll position
 document.addEventListener('DOMContentLoaded', function () {
@@ -208,6 +231,20 @@ sr.reveal(".project-img", { interval: 200 });
     // Update the icons
     updateMode();
   }
+
+  let lastScrollTop = 0;
+window.addEventListener("scroll", function() {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  if (currentScroll > lastScrollTop){
+    // Scroll Down
+    document.querySelector('.l-header').style.top = '-50px'; // Hide the header
+  } else {
+    // Scroll Up
+    document.querySelector('.l-header').style.top = '0'; // Show the header
+  }
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+}, false);
+
   
 
   var messageArr = ["UMN Student", "Software Engineer", "Frontend Developer", "Backend Developer", "Data Scientist", "Machine Learning Engineer"];
