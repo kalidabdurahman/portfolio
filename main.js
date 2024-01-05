@@ -5,11 +5,15 @@ const showMenu = (toggleId, navId) => {
 
   if (toggle && nav) {
     toggle.addEventListener("click", () => {
+      console.log('Before toggle:', nav.classList); // Check classes before toggle
       nav.classList.toggle("show");
+      console.log('After toggle:', nav.classList); // Check classes after toggle
     });
   }
 };
 showMenu("nav-toggle", "nav-menu");
+
+
 
 document.addEventListener("DOMContentLoaded", function(event) {
   setDefaultMode();
