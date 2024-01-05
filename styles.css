@@ -117,11 +117,10 @@ body {
 }
 
 /* Update the hover effect for nav links in dark mode */
-/*
 .dark-mode .nav-link:hover::after {
-  background-color: var(--second-color);
+  background-color: var(--second-color); /* Light blue or any color that is visible in dark mode */
 }
-*/
+
 .dark-mode .home-social-icon {
   color: #ffffff; /* Change icon color to white */
 }
@@ -354,59 +353,9 @@ img {
     background-color: var(--first-color);
     transition: 0.5s;
   }
-  /* Adjust the font size and ensure the name is in one line */
   .nav-name {
-    font-size: 5vw; /* Adjust font size based on viewport width, but keep it reasonable */
-    white-space: nowrap; /* Prevents the name from breaking into multiple lines */
+    font-size: 1.5rem; /* Adjust as needed */
   }
-
-  /* Adjust the padding and layout for smaller screens */
-  .home {
-    padding: 30px; /* Add padding to prevent content from touching the edges */
-  }
-
-  .home-data {
-    text-align: center; /* Center the text for smaller screens */
-  }
-
-  /* Adjust the font size of the home title for smaller screens */
-  .home-title {
-    font-size: 6vw; /* Adjust font size based on viewport width */
-    line-height: 1.2; /* Adjust line height to prevent overlap */
-  }
-
-  /* Ensure buttons don't overlap and have enough space on smaller screens */
-  .button.home-button {
-    margin: 10px 5px; /* Add margin around buttons */
-    padding: 10px 20px; /* Adjust padding inside buttons */
-    font-size: 4vw; /* Scale the font size of the button text */
-  }
-
-  /* Adjust the home social icons for smaller screens */
-  .home-social {
-    justify-content: center; /* Center the social icons */
-    margin-top: 20px; /* Add margin on top */
-  }
-
-  .home-social-icon {
-    font-size: 5vw; /* Adjust the size of the social icons based on viewport width */
-    margin: 0 5px; /* Add margin to space out icons */
-  }
-
-  /* Adjust the size and position of the profile image */
-  .home-img {
-    max-width: 100%; /* Allow the image to be responsive and fill the container */
-    position: static; /* Reset the position to default */
-    margin-top: 20px; /* Add margin on top */
-  }
-
-  .your-photo-class {
-    width: 50vw; /* Adjust the width of the profile image based on viewport width */
-    height: auto; /* Adjust the height automatically to maintain aspect ratio */
-    border: none; /* Remove the border on smaller screens if desired */
-    animation: none; /* Remove any animations on smaller screens if desired */
-  }
-
 }
 .nav-item {
   margin-bottom: var(--mb-4);
